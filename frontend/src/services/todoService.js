@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'https://todo-app-wh3e.onrender.com';
+const API_URL = 'http://localhost:5000/todos';
 
 export const todoService = {
   // Create a new todo
