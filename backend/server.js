@@ -3,9 +3,11 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const Todo = require('./models/Todo');
+require('dotenv').config();   
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+const apiKey = process.env.API_KEY;
 
 // Middleware
 app.use(cors());
@@ -77,6 +79,8 @@ app.delete('/todos/:id', async (req, res) => {
   }
 });
 
+
+
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`Server running on port ${PORT} API Key: ${apiKey} `);
 });
